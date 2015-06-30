@@ -1,0 +1,23 @@
+language: php
+
+php:
+  - "5.4"
+  - "5.5"
+  - "5.6"
+  - "7.0"
+  - "hhvm"
+
+install:
+  - composer install --dev
+  - composer require zendframework/zendframework1
+  - composer show -i
+  - wget https://scrutinizer-ci.com/ocular.phar
+
+script:
+  - make -ki cs-test phpunit
+
+after_script:
+  - php ocular.phar code-coverage:upload --format=php-clover tests/log/clover.xml
+
+matrix:
+  fast_finish: true

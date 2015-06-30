@@ -1,0 +1,24 @@
+{
+    "name": "adamlundrigan/ldc-zf1-di-leaguecontainer",
+    "description": "Basic controller dependency injection in ZF1 with League\\Container",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Adam Lundrigan",
+            "email": "adam@lundrigan.ca"
+        }
+    ],
+    "require": {
+        "league/container": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "fabpot/php-cs-fixer": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LdcZf1DiLeagueContainer\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+imports:
+    - php
+
+tools:
+    external_code_coverage:
+        runs: 15
+        timeout: 3600
