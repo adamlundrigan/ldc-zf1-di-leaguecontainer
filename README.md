@@ -1,6 +1,10 @@
 LdcZf1DiLeagueContainer
 =======================
 
+
+[![Latest Stable Version](https://poser.pugx.org/adamlundrigan/ldc-zf1-di-leaguecontainer/v/stable.svg)](https://packagist.org/packages/adamlundrigan/ldc-zf1-di-leaguecontainer) [![License](https://poser.pugx.org/adamlundrigan/ldc-zf1-di-leaguecontainer/license.svg)](https://packagist.org/packages/adamlundrigan/ldc-zf1-di-leaguecontainer) [![Build Status](https://travis-ci.org/adamlundrigan/ldc-zf1-di-leaguecontainer.svg?branch=master)](https://travis-ci.org/adamlundrigan/ldc-zf1-di-leaguecontainer) [![Code Coverage](https://scrutinizer-ci.com/g/adamlundrigan/ldc-zf1-di-leaguecontainer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/adamlundrigan/ldc-zf1-di-leaguecontainer/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/adamlundrigan/ldc-zf1-di-leaguecontainer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/adamlundrigan/ldc-zf1-di-leaguecontainer/?branch=master)
+
+
 ## What?
 
 It's a simple glue layer which injects services registered in a [League\Container](http://container.thephpleague.com) into a ZF1 controller. 
