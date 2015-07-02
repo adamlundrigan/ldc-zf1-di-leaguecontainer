@@ -27,11 +27,12 @@ class DependencyInjector extends \Zend_Controller_Action_Helper_Abstract
             return;
         }
 
-        foreach ($controller->dependencies as $name) {
+        foreach ($controller->dependencies as $key => $name) {
+            $variable = is_numeric($key) ? $name : $key;
             if ( ! $container->isRegistered($name) ) {
                 throw new \DomainException("Unable to find dependency by name '$name'");
             }
-            $controller->$name = $container->get($name);
+            $controller->$variable = $container->get($name);
         }
     }
 }

@@ -94,15 +94,17 @@ class DependencyInjectorTest extends \PHPUnit_Framework_TestCase
 
     public function testHelperInjectsNamedDependencies()
     {
-        $this->controller->dependencies = ['foo'];
+        $this->controller->dependencies = [
+            'foo',
+            'bar' => 'serviceName',
+        ];
 
         $this->bootstrap->shouldReceive('getResource')
                         ->with('container')
                         ->once()
                         ->andReturn($this->container);
 
-        $mockDependency = new \stdClass();
-
+        $mockDependency1 = new \stdClass();
         $this->container->shouldReceive('isRegistered')
                 ->with('foo')
                 ->once()
@@ -110,11 +112,22 @@ class DependencyInjectorTest extends \PHPUnit_Framework_TestCase
         $this->container->shouldReceive('get')
                 ->with('foo')
                 ->once()
-                ->andReturn($mockDependency);
+                ->andReturn($mockDependency1);
+
+        $mockDependency2 = new \stdClass();
+        $this->container->shouldReceive('isRegistered')
+                ->with('serviceName')
+                ->once()
+                ->andReturn(true);
+        $this->container->shouldReceive('get')
+                ->with('serviceName')
+                ->once()
+                ->andReturn($mockDependency2);
 
         $this->object->preDispatch();
 
         $this->assertTrue(isset($this->controller->foo));
-        $this->assertSame($mockDependency, $this->controller->foo);
+        $this->assertSame($mockDependency1, $this->controller->foo);
+        $this->assertSame($mockDependency2, $this->controller->bar);
     }
 }
