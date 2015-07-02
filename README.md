@@ -52,5 +52,7 @@ Heavily based on [@weierophinney](https://github.com/weierophinney)'s now-many-m
    }
    ```
 
+   If you use a non-numeric key for any value of `$dependencies` the injector will use that as the controller property to inject into.
+
 4.  Profit!  The injector will create a public property on the controller instance for each named service. 
 
